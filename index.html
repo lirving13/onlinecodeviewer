@@ -8,28 +8,7 @@
   <!-- Primary Meta Tags -->
   <title>Online Code Viewer – Live HTML, CSS & JavaScript Editor | Front-end Sandbox</title>
   <meta name="description" content="Online Code Viewer: the ultimate free online code editor and sandbox. Live HTML, CSS & JavaScript playground with syntax highlighting, collaboration, Emmet, Web Workers, and more—perfect for front-end developers."/>
-  <meta name="keywords" content="
-    online code editor,
-    live HTML editor,
-    CSS sandbox,
-    JavaScript playground,
-    front-end development tool,
-    web dev sandbox,
-    codepen alternative,
-    jsfiddle alternative,
-    browser IDE,
-    syntax highlighter online,
-    code snippet library,
-    web design tool,
-    HTML CSS JS editor,
-    collaborative code editor,
-    instant code preview,
-    code sharing platform,
-    developer sandbox,
-    in-browser code IDE,
-    code testing environment,
-    programming playground
-  "/>
+  <meta name="keywords" content="online code editor, live HTML editor, CSS sandbox, JavaScript playground, front-end development tool, web dev sandbox, codepen alternative, jsfiddle alternative, browser IDE, syntax highlighter online, code snippet library, web design tool, HTML CSS JS editor, collaborative code editor, instant code preview, code sharing platform, developer sandbox, in-browser code IDE, code testing environment, programming playground"/>
   <meta name="author" content="OnlineCodeViewer Team"/>
   <meta name="publisher" content="OnlineCodeViewer"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
@@ -41,7 +20,7 @@
   <link rel="canonical" href="https://www.onlinecodeviewer.com/"/>
   <link rel="alternate" hreflang="en-GB" href="https://www.onlinecodeviewer.com/"/>
 
-  <!-- Favicons -->
+  <!-- Favicons & Touch Icons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 
@@ -73,7 +52,7 @@
   <meta name="twitter:image" content="https://www.onlinecodeviewer.com/assets/images/twitter-image.png"/>
   <meta name="twitter:image:alt" content="Screenshot of Online Code Viewer editor"/>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -105,7 +84,7 @@
   }
   </script>
 
-  <!-- Styles & Fonts -->
+  <!-- Critical CSS & Fonts -->
   <link rel="preload" href="assets/style.css" as="style">
   <link rel="stylesheet" href="assets/style.css">
 
@@ -113,10 +92,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6/theme/neo.css">
   <script defer src="https://cdn.jsdelivr.net/npm/codemirror@6"></script>
 
-  <!-- Google Analytics (GA4) -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
   <script>
-    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config','GA_MEASUREMENT_ID',{anonymize_ip:true,page_path:'/'});
   </script>
@@ -125,13 +105,10 @@
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="OnlineCodeViewer Home">
-        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
-        <span>OnlineCodeViewer</span>
-      </a>
-      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-      <nav class="site-nav" role="navigation">
-        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="index.html" class="logo"><svg width="32" height="32" viewBox="0 0 64 64"><path d="..."/></svg><span>OnlineCodeViewer</span></a>
+      <button class="theme-toggle">🌙</button>
+      <nav class="site-nav">
+        <button class="nav-toggle">☰</button>
         <ul class="nav-list">
           <li><a href="index.html" class="active">Live HTML Editor</a></li>
           <li><a href="templates.html">Coding Templates</a></li>
@@ -145,33 +122,49 @@
   </header>
 
   <!-- Breadcrumb -->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="index.html">Home</a></li>
-      <li aria-current="page">Live HTML Editor</li>
-    </ol>
+  <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="index.html">Home</a></li><li aria-current="page">Live HTML Editor</li></ol>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
     <div class="container">
       <h1>Build, Test & Share Code Instantly</h1>
-      <p>Free online HTML, CSS & JavaScript editor & playground with live preview, collaboration & export tools.</p>
+      <p>Free online HTML, CSS & JS editor & playground with live preview, collaboration & export tools.</p>
       <a href="#editor-container" class="btn btn-primary">Get Started</a>
     </div>
   </section>
 
-  <!-- Editor + Toolbar -->
+  <!-- Main Editor + Toolbar -->
   <main id="editor-container" class="editor-container" role="main">
     <div class="editor-toolbar">
-      <button data-action="dock-left" aria-label="Dock Left">←</button>
-      <button data-action="dock-right" aria-label="Dock Right">→</button>
-      <button data-action="fullscreen" aria-label="Toggle Fullscreen">⤢</button>
-      <button data-action="reset" aria-label="Reset Layout">⟲</button>
+      <button data-action="dock-left">←</button>
+      <button data-action="dock-right">→</button>
+      <button data-action="fullscreen">⤢</button>
+      <button data-action="reset">⟲</button>
+      <button data-action="open-new">↗</button>
+      <button id="open-file">Open</button>
+      <button id="save-file">Save</button>
+      <button id="export-zip">Export ZIP</button>
+      <input type="file" id="import-zip" style="display:none">
+      <button onclick="document.getElementById('import-zip').click()">Import ZIP</button>
+      <button id="copy-url">Copy URL</button>
+      <button id="share">Share</button>
+      <input type="color" id="color-picker" title="Pick background color">
+      <input type="text" id="seo-title" placeholder="SEO Title">
+      <textarea id="seo-desc" placeholder="SEO Description"></textarea>
+      <button id="show-perf">Perf</button>
+      <button id="start-tour">Tour</button>
+      <button id="shortcuts-btn">Shortcuts</button>
     </div>
-    <div id="editor" class="pane" aria-label="Code editor"></div>
-    <iframe id="preview" class="pane" sandbox="allow-scripts allow-same-origin" title="Live preview"></iframe>
+    <div id="editor" class="pane"></div>
+    <iframe id="preview" class="pane" sandbox="allow-scripts allow-same-origin"></iframe>
   </main>
+
+  <!-- In-page console & perf dashboard & shortcuts modal -->
+  <div id="console" class="console-pane"></div>
+  <div id="perf-dashboard" class="perf-pane"></div>
+  <div id="shortcuts-modal" class="modal">…keyboard shortcuts here…</div>
 
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
@@ -194,6 +187,7 @@
     </div>
   </footer>
 
+  <!-- Main JS -->
   <script defer src="assets/script.js"></script>
 </body>
 </html>
