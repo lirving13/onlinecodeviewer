@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Online Code Viewer – Live HTML, CSS & JavaScript Editor | Front-end Sandbox</title>
+  <meta name="description" content="Online Code Viewer: the ultimate free online code editor and sandbox. Live HTML, CSS & JavaScript playground with syntax highlighting, collaboration, Emmet, Web Workers, and more—perfect for front-end developers."/>
+  <meta name="keywords" content="
+    online code editor,
+    live HTML editor,
+    CSS sandbox,
+    JavaScript playground,
+    front-end development tool,
+    web dev sandbox,
+    codepen alternative,
+    jsfiddle alternative,
+    browser IDE,
+    syntax highlighter online,
+    code snippet library,
+    web design tool,
+    HTML CSS JS editor,
+    collaborative code editor,
+    instant code preview,
+    code sharing platform,
+    developer sandbox,
+    in-browser code IDE,
+    code testing environment,
+    programming playground
+  "/>
+  <meta name="author" content="OnlineCodeViewer Team"/>
+  <meta name="publisher" content="OnlineCodeViewer"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <meta name="theme-color" content="#1e88e5"/>
+  <meta name="google-site-verification" content="YOUR_GOOGLE_SITE_VERIFICATION_TOKEN"/>
+
+  <!-- Canonical & Hreflang -->
+  <link rel="canonical" href="https://www.onlinecodeviewer.com/"/>
+  <link rel="alternate" hreflang="en-GB" href="https://www.onlinecodeviewer.com/"/>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+
+  <!-- OpenSearch -->
+  <link rel="search" type="application/opensearchdescription+xml" title="Search OnlineCodeViewer" href="/opensearch.xml"/>
+
+  <!-- Preconnect & DNS-Prefetch -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="OnlineCodeViewer"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:title" content="Online Code Viewer – Live HTML, CSS & JavaScript Editor"/>
+  <meta property="og:description" content="Free online code editor with instant preview, collaboration, Emmet support & more. Perfect playground for front-end developers."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/"/>
+  <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/og-image.png"/>
+  <meta property="og:image:alt" content="Screenshot of Online Code Viewer editor"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@OnlineCodeViewer"/>
+  <meta name="twitter:creator" content="@OnlineCodeViewer"/>
+  <meta name="twitter:title" content="Online Code Viewer – Live HTML, CSS & JavaScript Editor"/>
+  <meta name="twitter:description" content="Free online code editor with instant preview, collaboration, Emmet support & more. Perfect playground for front-end developers."/>
+  <meta name="twitter:image" content="https://www.onlinecodeviewer.com/assets/images/twitter-image.png"/>
+  <meta name="twitter:image:alt" content="Screenshot of Online Code Viewer editor"/>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "url":"https://www.onlinecodeviewer.com/",
+        "name":"OnlineCodeViewer",
+        "potentialAction":{
+          "@type":"SearchAction",
+          "target":"https://www.onlinecodeviewer.com/?s={search_term}",
+          "query-input":"required name=search_term"
+        }
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.onlinecodeviewer.com/"}
+        ]
+      },
+      {
+        "@type":"WebPage",
+        "url":"https://www.onlinecodeviewer.com/",
+        "name":"Live HTML, CSS & JavaScript Editor",
+        "isPartOf":{"@id":"https://www.onlinecodeviewer.com/"},
+        "breadcrumb":{"@id":"https://www.onlinecodeviewer.com/#breadcrumb"}
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles & Fonts -->
+  <link rel="preload" href="assets/style.css" as="style">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <!-- CodeMirror 6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6/theme/neo.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/codemirror@6"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','GA_MEASUREMENT_ID',{anonymize_ip:true,page_path:'/'});
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="OnlineCodeViewer Home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
+        <span>OnlineCodeViewer</span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <nav class="site-nav" role="navigation">
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Live HTML Editor</a></li>
+          <li><a href="templates.html">Coding Templates</a></li>
+          <li><a href="docs.html">Dev Docs</a></li>
+          <li><a href="blog.html">Web Dev Blog</a></li>
+          <li><a href="shortcuts.html">Keybindings</a></li>
+          <li><a href="about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Live HTML Editor</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Build, Test & Share Code Instantly</h1>
+      <p>Free online HTML, CSS & JavaScript editor & playground with live preview, collaboration & export tools.</p>
+      <a href="#editor-container" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Editor + Toolbar -->
+  <main id="editor-container" class="editor-container" role="main">
+    <div class="editor-toolbar">
+      <button data-action="dock-left" aria-label="Dock Left">←</button>
+      <button data-action="dock-right" aria-label="Dock Right">→</button>
+      <button data-action="fullscreen" aria-label="Toggle Fullscreen">⤢</button>
+      <button data-action="reset" aria-label="Reset Layout">⟲</button>
+    </div>
+    <div id="editor" class="pane" aria-label="Code editor"></div>
+    <iframe id="preview" class="pane" sandbox="allow-scripts allow-same-origin" title="Live preview"></iframe>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-sitemap">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="docs.html">Docs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="shortcuts.html">Shortcuts</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 OnlineCodeViewer. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/OnlineCodeViewer" rel="me">Twitter</a></li>
+        <li><a href="https://github.com/OnlineCodeViewer" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script defer src="assets/script.js"></script>
+</body>
+</html>
