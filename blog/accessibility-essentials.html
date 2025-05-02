@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>Accessibility Essentials: ARIA & Keyboard Navigation | Online Code Viewer Blog</title>
+  <meta name="description" content="Learn to enhance web accessibility using ARIA roles, states, and keyboard navigation best practices." />
+  <meta name="keywords" content="web accessibility, ARIA roles, keyboard navigation, WCAG, screen readers" />
+  <link rel="canonical" href="https://www.onlinecodeviewer.com/blog/accessibility-essentials.html" />
+  <meta name="theme-color" content="#1e88e5" />
+
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="Accessibility Essentials: ARIA & Keyboard Navigation" />
+  <meta property="og:description" content="Enhance your site’s accessibility with ARIA roles, states, and keyboard navigation techniques." />
+  <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/accessibility-og.png" />
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/blog/accessibility-essentials.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Accessibility Essentials: ARIA & Keyboard Navigation",
+    "author":{"@type":"Person","name":"OnlineCodeViewer Team"},
+    "datePublished":"2025-04-22",
+    "dateModified":"2025-04-22",
+    "image":"https://www.onlinecodeviewer.com/assets/images/accessibility-og.png",
+    "publisher":{"@type":"Organization","name":"OnlineCodeViewer","logo":{"@type":"ImageObject","url":"https://www.onlinecodeviewer.com/assets/images/logo.svg"}},
+    "mainEntityOfPage":"https://www.onlinecodeviewer.com/blog/accessibility-essentials.html"
+  }
+  </script>
+
+  <link rel="preload" href="../assets/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="OnlineCodeViewer Home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
+        <span>OnlineCodeViewer</span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <nav class="site-nav" role="navigation">
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Dev Docs</a></li>
+          <li><a href="blog.html" class="active">Web Dev Blog</a></li>
+          <li><a href="../shortcuts.html">Keybindings</a></li>
+          <li><a href="../about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Web Dev Blog</a></li>
+        <li aria-current="page">Accessibility Essentials</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container post-main">
+    <article>
+      <h1>Accessibility Essentials: ARIA & Keyboard Navigation</h1>
+      <time datetime="2025-04-22">22 Apr 2025</time>
+
+      <p>Making the web accessible means everyone—regardless of ability—can navigate and understand your site. Here are three fundamentals: ARIA roles & states, keyboard focus management, and skip links.</p>
+
+      <h2>1. ARIA Roles & States</h2>
+      <p>When native HTML falls short, ARIA (Accessible Rich Internet Applications) fills the gap. Example of a custom toggle button:</p>
+      <pre><code>&lt;div role="button" tabindex="0" aria-pressed="false"&gt;Toggle&lt;/div&gt;</code></pre>
+      <p>Update <code>aria-pressed</code> dynamically to signal state changes.</p>
+
+      <h2>2. Keyboard Focus Management</h2>
+      <p>Users who rely on keyboards need a logical tab order. Interactive elements must be focusable:</p>
+      <pre><code>&lt;button class="my-btn"&gt;Click me&lt;/button&gt;</code></pre>
+      <p>For custom controls, add <code>tabindex="0"</code> and handle <code>keyup</code> events:</p>
+      <pre><code>element.addEventListener('keyup', e => {
+  if (e.key === 'Enter') doAction();
+});</code></pre>
+
+      <h2>3. Skip Links</h2>
+      <p>Provide a “Skip to main content” link for screen reader users:</p>
+      <pre><code>&lt;a href="#main" class="skip-link"&gt;Skip to main content&lt;/a&gt;</code></pre>
+      <p>Hide it off-screen by default and show on focus to avoid UI clutter.</p>
+
+      <p>These patterns satisfy WCAG guidelines and improve your site’s usability for everyone.</p>
+
+      <p>Next up: <a href="performance-optimization.html">Performance Optimization: Core Web Vitals & Lazy-Loading</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-sitemap">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Docs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="../shortcuts.html">Shortcuts</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 OnlineCodeViewer. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/OnlineCodeViewer" rel="me">Twitter</a></li>
+        <li><a href="https://github.com/OnlineCodeViewer" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
