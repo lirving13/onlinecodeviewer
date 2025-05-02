@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>Performance Optimisation: Core Web Vitals & Lazy-Loading | Online Code Viewer Blog</title>
+  <meta name="description" content="Improve your site’s speed and UX with Core Web Vitals measurement, resource hints, and smart lazy-loading strategies." />
+  <meta name="keywords" content="performance optimisation, Core Web Vitals, LCP, FID, CLS, lazy loading, resource hints" />
+  <link rel="canonical" href="https://www.onlinecodeviewer.com/blog/performance-optimization.html" />
+  <meta name="theme-color" content="#1e88e5" />
+
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="Performance Optimisation: Core Web Vitals & Lazy-Loading" />
+  <meta property="og:description" content="Improve your site’s speed and UX with Core Web Vitals measurement, resource hints, and smart lazy-loading strategies." />
+  <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/perf-opt-og.png" />
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/blog/performance-optimization.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Performance Optimization: Core Web Vitals & Lazy-Loading",
+    "author":{"@type":"Person","name":"OnlineCodeViewer Team"},
+    "datePublished":"2025-04-20",
+    "dateModified":"2025-04-20",
+    "image":"https://www.onlinecodeviewer.com/assets/images/perf-opt-og.png",
+    "publisher":{"@type":"Organisation","name":"OnlineCodeViewer","logo":{"@type":"ImageObject","url":"https://www.onlinecodeviewer.com/assets/images/logo.svg"}},
+    "mainEntityOfPage":"https://www.onlinecodeviewer.com/blog/performance-optimisation.html"
+  }
+  </script>
+
+  <link rel="preload" href="../assets/style.css" as="style">
+  <link rel="stylesheet" href="../assets/style.css">
+  <!-- Preload hero background -->
+  <link rel="preload" href="../assets/images/perf-opt-bg.jpg" as="image">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="OnlineCodeViewer Home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
+        <span>OnlineCodeViewer</span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <nav class="site-nav" role="navigation">
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Dev Docs</a></li>
+          <li><a href="blog.html" class="active">Web Dev Blog</a></li>
+          <li><a href="../shortcuts.html">Keybindings</a></li>
+          <li><a href="../about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Web Dev Blog</a></li>
+        <li aria-current="page">Performance Optimization</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container post-main">
+    <article>
+      <h1>Performance Optimization: Core Web Vitals & Lazy-Loading</h1>
+      <time datetime="2025-04-20">20 Apr 2025</time>
+
+      <p>Modern users expect lightning-fast experiences. Core Web Vitals—LCP, FID, and CLS—are metrics Google uses to evaluate page performance. Optimising for these not only improves UX but also boosts SEO.</p>
+
+      <h2>1. Largest Contentful Paint (LCP)</h2>
+      <p>LCP measures how quickly the main content renders. Aim for &lt;2.5s. Techniques:</p>
+      <ul>
+        <li>Preload critical images: <code>&lt;link rel="preload" href="hero.jpg" as="image"&gt;</code></li>
+        <li>Inline critical CSS to reduce render-blocking.</li>
+        <li>Serve images via next-gen formats (e.g., WebP).</li>
+      </ul>
+
+      <h2>2. First Input Delay (FID)</h2>
+      <p>FID measures interactivity latency. Aim for &lt;100ms. Reduce main-thread work:</p>
+      <ul>
+        <li>Defer non-critical scripts: <code>&lt;script defer src="utils.js"&gt;&lt;/script&gt;</code></li>
+        <li>Break up long tasks with Web Workers.</li>
+      </ul>
+
+      <h2>3. Cumulative Layout Shift (CLS)</h2>
+      <p>CLS measures visual stability. Aim for &lt;0.1. Reserve space for images/ads with width/height or CSS aspect-ratio.</p>
+
+      <h2>Lazy-Loading Images & Iframes</h2>
+      <p>Add <code>loading="lazy"</code> to defer offscreen resources:</p>
+      <pre><code>&lt;img src="gallery1.jpg" loading="lazy" alt="…"&gt;</code></pre>
+
+      <p>Implementing these strategies will give you a fast, stable, and interactive site—key for retaining users and ranking high in search.</p>
+
+      <p>Explore more in our <a href="../docs.html">Dev Docs</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-sitemap">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Docs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="../shortcuts.html">Shortcuts</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 OnlineCodeViewer. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/OnlineCodeViewer" rel="me">Twitter</a></li>
+        <li><a href="https://github.com/OnlineCodeViewer" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
