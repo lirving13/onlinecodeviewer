@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB" class="light-theme">
 <head>
-  <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta -->
@@ -15,29 +16,57 @@
   <meta property="og:title" content="CSS Basics: Selectors, Box Model & Flexbox" />
   <meta property="og:description" content="Learn CSS selectors, the box model, and responsive Flexbox layouts in this comprehensive beginner’s guide." />
   <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/css-basics-og.png" />
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/blog/css-basics.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- JSON-LD Article -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"CSS Basics: Selectors, Box Model & Flexbox",
-    "author":{"@type":"Person","name":"OnlineCodeViewer Team"},
-    "datePublished":"2025-05-01",
-    "dateModified":"2025-05-01",
-    "image":"https://www.onlinecodeviewer.com/assets/images/css-basics-og.png",
-    "publisher":{"@type":"Organization","name":"OnlineCodeViewer","logo":{"@type":"ImageObject","url":"https://www.onlinecodeviewer.com/assets/images/logo.svg"}},
-    "mainEntityOfPage":"https://www.onlinecodeviewer.com/blog/css-basics.html"
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CSS Basics: Selectors, Box Model & Flexbox",
+    "author": { "@type": "Person", "name": "OnlineCodeViewer Team" },
+    "datePublished": "2025-05-01",
+    "dateModified": "2025-05-01",
+    "image": "https://www.onlinecodeviewer.com/assets/images/css-basics-og.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnlineCodeViewer",
+      "logo": { "@type": "ImageObject", "url": "https://www.onlinecodeviewer.com/assets/images/logo.svg" }
+    },
+    "mainEntityOfPage": "https://www.onlinecodeviewer.com/blog/css-basics.html"
   }
   </script>
 
-  <!-- Styles & Scripts -->
+  <!-- Styles -->
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header class="site-header">…copy…</header>
-  <nav class="breadcrumb">
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="OnlineCodeViewer Home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
+        <span>OnlineCodeViewer</span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <nav class="site-nav" role="navigation">
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Dev Docs</a></li>
+          <li><a href="blog.html" class="active">Web Dev Blog</a></li>
+          <li><a href="../shortcuts.html">Keybindings</a></li>
+          <li><a href="../about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
     <div class="container">
       <ol>
         <li><a href="../index.html">Home</a></li>
@@ -47,28 +76,43 @@
     </div>
   </nav>
 
+  <!-- Article Content -->
   <main class="container post-main">
     <article>
       <h1>CSS Basics: Selectors, Box Model & Flexbox</h1>
       <time datetime="2025-05-01">1 May 2025</time>
 
+      <p>Cascading Style Sheets (CSS) is the language that makes the web beautiful. Before diving into complex frameworks, you need to understand three core concepts: selectors, the box model, and Flexbox. In this guide, we’ll cover each in turn, complete with code examples you can copy into your <a href="../index.html">Online Code Viewer</a> editor and experiment with instantly.</p>
+
       <h2>1. CSS Selectors</h2>
-      <p>Selectors let you target HTML elements for styling. Common types include:</p>
+      <p>Select the right elements to style your page. Common selectors include:</p>
       <ul>
-        <li><code>element</code> selector: <code>p { color: blue; }</code></li>
-        <li><code>.class</code> selector: <code>.btn { padding: 1rem; }</code></li>
-        <li><code>#id</code> selector: <code>#header { background: #333; }</code></li>
-        <li>Attribute selector: <code>a[target="_blank"] { color:red; }</code></li>
+        <li><code>element</code> selector: targets tags—e.g., <code>p { color: blue; }</code>.</li>
+        <li><code>.class</code> selector: targets class attributes—e.g., <code>.btn { padding: 1rem; }</code>.</li>
+        <li><code>#id</code> selector: targets unique IDs—e.g., <code>#header { background: #333; }</code>.</li>
+        <li>Attribute selectors: <code>a[target="_blank"] { color: red; }</code> for links opening in new tabs.</li>
       </ul>
+      <p>Combine selectors for specificity: <code>nav ul li a:hover { text-decoration: underline; }</code>.</p>
 
       <h2>2. The Box Model</h2>
-      <p>Every element is a rectangular box composed of:</p>
-      <pre><code>margin ↔ border ↔ padding ↔ content</code></pre>
-      <p>Use <code>box-sizing: border-box;</code> to include padding/border in the element’s width/height.</p>
+      <p>Every element is a box composed of content, padding, border, and margin. Use this CSS rule to include padding/borders within the element’s width/height:</p>
+      <pre><code>*, *::before, *::after {
+  box-sizing: border-box;
+}
+</code></pre>
+      <p>Example:</p>
+      <pre><code>.card {
+  width: 200px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin: 1rem auto;
+}
+</code></pre>
+      <p>This ensures your layout calculations are predictable.</p>
 
       <h2>3. Flexbox Layout</h2>
-      <p>Flexbox makes one-dimensional layout simple:</p>
-      <pre><code> .container {
+      <p>Flexbox makes one-dimensional layouts intuitive. Wrap child elements in a flex container:</p>
+      <pre><code>.flex-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,15 +120,45 @@
 </code></pre>
       <p>Key properties:</p>
       <ul>
-        <li><code>justify-content</code>: horizontal alignment</li>
-        <li><code>align-items</code>: vertical alignment</li>
-        <li><code>flex-wrap</code>: control wrapping</li>
+        <li><code>justify-content</code>: controls horizontal alignment (e.g., <code>center</code>, <code>space-around</code>).</li>
+        <li><code>align-items</code>: controls vertical alignment (e.g., <code>flex-start</code>, <code>stretch</code>).</li>
+        <li><code>flex-wrap</code>: allows wrapping onto multiple lines.</li>
       </ul>
+      <p>Flexbox is perfect for nav bars, galleries, and responsive card layouts.</p>
 
-      <p>With these fundamentals, you can build responsive, flexible UIs.</p>
+      <h2>Putting It All Together</h2>
+      <p>Here’s a quick demo combining everything:</p>
+      <pre><code>&lt;div class="flex-container"&gt;
+  &lt;div class="card"&gt;Item 1&lt;/div&gt;
+  &lt;div class="card"&gt;Item 2&lt;/div&gt;
+  &lt;div class="card"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      <p>Copy this into your editor to see real-time results. Master these basics, and you’ll be ready to explore Grid, animations, and advanced layouts.</p>
+
+      <p>Next up: <a href="js-basics.html">JavaScript Basics: Variables, Functions & DOM</a>.</p>
     </article>
   </main>
 
-  <footer class="site-footer">…copy…</footer>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-sitemap">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Docs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="../shortcuts.html">Shortcuts</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 OnlineCodeViewer. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/OnlineCodeViewer" rel="me">Twitter</a></li>
+        <li><a href="https://github.com/OnlineCodeViewer" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
