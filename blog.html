@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>Web Dev Blog – Articles & Tutorials | Online Code Viewer</title>
+  <meta name="description" content="Stay up-to-date with front-end tutorials, tips & best practices from Online Code Viewer’s Web Dev Blog." />
+  <meta name="keywords" content="web development blog, front-end tutorials, HTML CSS JavaScript tips, coding articles" />
+  <link rel="canonical" href="https://www.onlinecodeviewer.com/blog.html" />
+  <meta name="theme-color" content="#1e88e5" />
+
+  <!-- OpenGraph/Twitter -->
+  <meta property="og:title" content="Web Dev Blog – Online Code Viewer" />
+  <meta property="og:description" content="Latest front-end tutorials & tips from the Online Code Viewer team." />
+  <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/blog-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD: ItemList of Articles -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {
+        "@type":"ListItem","position":1,
+        "url":"https://www.onlinecodeviewer.com/blog/css-basics.html",
+        "name":"CSS Basics: Selectors, Box Model & Flexbox"
+      },
+      {
+        "@type":"ListItem","position":2,
+        "url":"https://www.onlinecodeviewer.com/blog/js-basics.html",
+        "name":"JavaScript Basics: Variables, Functions & DOM"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Styles & Scripts -->
+  <link rel="preload" href="assets/style.css" as="style" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+  <header class="site-header">…</header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol><li><a href="index.html">Home</a></li><li aria-current="page">Web Dev Blog</li></ol>
+  </nav>
+
+  <main class="container blog-main">
+    <section class="featured-post">
+      <h1>Featured Article</h1>
+      <article>
+        <h2><a href="blog/css-basics.html">CSS Basics: Selectors, Box Model & Flexbox</a></h2>
+        <p>Master the fundamentals of CSS layout and styling in this comprehensive guide.</p>
+        <time datetime="2025-05-01">May 1 2025</time>
+      </article>
+    </section>
+
+    <section class="recent-posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        <li><a href="blog/js-basics.html">JavaScript Basics: Variables, Functions & DOM</a> — <time datetime="2025-04-28">Apr 28 2025</time></li>
+        <!-- more posts -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">…</footer>
+</body>
+</html>
