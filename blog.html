@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-GB" class="light-theme">
 <head>
-  <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta -->
   <title>Web Dev Blog – Articles & Tutorials | Online Code Viewer</title>
   <meta name="description" content="Stay up-to-date with front-end tutorials, tips & best practices from Online Code Viewer’s Web Dev Blog." />
-  <meta name="keywords" content="web development blog, front-end tutorials, HTML CSS JavaScript tips, coding articles" />
+  <meta name="keywords" content="web development blog, front-end tutorials, HTML CSS JavaScript tips, coding articles, web performance, accessibility" />
   <link rel="canonical" href="https://www.onlinecodeviewer.com/blog.html" />
   <meta name="theme-color" content="#1e88e5" />
 
-  <!-- OpenGraph/Twitter -->
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:site_name" content="OnlineCodeViewer" />
   <meta property="og:title" content="Web Dev Blog – Online Code Viewer" />
   <meta property="og:description" content="Latest front-end tutorials & tips from the Online Code Viewer team." />
   <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/blog-og.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/blog.html" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@OnlineCodeViewer" />
 
   <!-- JSON-LD: ItemList of Articles -->
   <script type="application/ld+json">
@@ -23,51 +28,86 @@
     "@context":"https://schema.org",
     "@type":"ItemList",
     "itemListElement":[
-      {
-        "@type":"ListItem","position":1,
-        "url":"https://www.onlinecodeviewer.com/blog/css-basics.html",
-        "name":"CSS Basics: Selectors, Box Model & Flexbox"
-      },
-      {
-        "@type":"ListItem","position":2,
-        "url":"https://www.onlinecodeviewer.com/blog/js-basics.html",
-        "name":"JavaScript Basics: Variables, Functions & DOM"
-      }
+      {"@type":"ListItem","position":1,"url":"https://www.onlinecodeviewer.com/blog/css-basics.html","name":"CSS Basics: Selectors, Box Model & Flexbox"},
+      {"@type":"ListItem","position":2,"url":"https://www.onlinecodeviewer.com/blog/js-basics.html","name":"JavaScript Basics: Variables, Functions & DOM"},
+      {"@type":"ListItem","position":3,"url":"https://www.onlinecodeviewer.com/blog/html5-semantics.html","name":"HTML5 Semantics: Building Accessible Markup"},
+      {"@type":"ListItem","position":4,"url":"https://www.onlinecodeviewer.com/blog/accessibility-essentials.html","name":"Accessibility Essentials: ARIA & Keyboard Navigation"},
+      {"@type":"ListItem","position":5,"url":"https://www.onlinecodeviewer.com/blog/performance-optimization.html","name":"Performance Optimization: Core Web Vitals & Lazy-Loading"}
     ]
   }
   </script>
 
   <!-- Styles & Scripts -->
-  <link rel="preload" href="assets/style.css" as="style" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script defer src="assets/script.js"></script>
+  <link rel="preload" href="../assets/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script defer src="../assets/script.js"></script>
 </head>
 <body>
-  <header class="site-header">…</header>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">…copy from index.html…</div>
+  </header>
 
+  <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
-    <ol><li><a href="index.html">Home</a></li><li aria-current="page">Web Dev Blog</li></ol>
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li aria-current="page">Web Dev Blog</li>
+      </ol>
+    </div>
   </nav>
 
   <main class="container blog-main">
+    <!-- Featured Article -->
     <section class="featured-post">
       <h1>Featured Article</h1>
       <article>
-        <h2><a href="blog/css-basics.html">CSS Basics: Selectors, Box Model & Flexbox</a></h2>
-        <p>Master the fundamentals of CSS layout and styling in this comprehensive guide.</p>
-        <time datetime="2025-05-01">May 1 2025</time>
+        <a href="performance-optimization.html">
+          <img src="../assets/images/perf-opt-thumb.png" alt="Performance Optimization" loading="lazy">
+        </a>
+        <h2><a href="performance-optimization.html">Performance Optimization: Core Web Vitals & Lazy-Loading</a></h2>
+        <p>Learn how to measure and improve your site’s speed with Core Web Vitals, in-browser profiling, and strategic lazy-loading.</p>
+        <time datetime="2025-05-01">1 May 2025</time>
       </article>
     </section>
 
+    <!-- Recent Posts Grid -->
     <section class="recent-posts">
-      <h2>Recent Posts</h2>
-      <ul>
-        <li><a href="blog/js-basics.html">JavaScript Basics: Variables, Functions & DOM</a> — <time datetime="2025-04-28">Apr 28 2025</time></li>
-        <!-- more posts -->
-      </ul>
+      <h2>All Posts</h2>
+      <div class="grid">
+        <article>
+          <a href="css-basics.html"><h3>CSS Basics: Selectors, Box Model & Flexbox</h3></a>
+          <time datetime="2025-05-01">1 May 2025</time>
+          <p>Master CSS selectors, understand the box model, and build responsive layouts with Flexbox.</p>
+        </article>
+        <article>
+          <a href="js-basics.html"><h3>JavaScript Basics: Variables, Functions & DOM</h3></a>
+          <time datetime="2025-04-28">28 Apr 2025</time>
+          <p>Kickstart your JS journey: variables, functions, scope, and DOM manipulation explained.</p>
+        </article>
+        <article>
+          <a href="html5-semantics.html"><h3>HTML5 Semantics: Building Accessible Markup</h3></a>
+          <time datetime="2025-04-25">25 Apr 2025</time>
+          <p>Discover semantic tags, landmark elements, and microdata for accessible, SEO-friendly HTML5.</p>
+        </article>
+        <article>
+          <a href="accessibility-essentials.html"><h3>Accessibility Essentials: ARIA & Keyboard Navigation</h3></a>
+          <time datetime="2025-04-22">22 Apr 2025</time>
+          <p>Implement ARIA roles, states, and keyboard support to make your apps usable by everyone.</p>
+        </article>
+        <article>
+          <a href="performance-optimization.html"><h3>Performance Optimization: Core Web Vitals & Lazy-Loading</h3></a>
+          <time datetime="2025-04-20">20 Apr 2025</time>
+          <p>Improve load times and interactivity with critical CSS, resource hints, and lazy-loading.</p>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">…</footer>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">…copy from index.html…</div>
+  </footer>
 </body>
 </html>
