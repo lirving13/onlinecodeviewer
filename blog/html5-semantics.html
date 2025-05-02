@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="light-theme">
+<head>
+  <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>HTML5 Semantics: Building Accessible Markup | Online Code Viewer Blog</title>
+  <meta name="description" content="Discover how to use HTML5 semantic elements (<header>, <nav>, <article>, etc.) to create accessible and SEO-friendly pages." />
+  <meta name="keywords" content="HTML5 semantics, accessible HTML, SEO, header, nav, article" />
+  <link rel="canonical" href="https://www.onlinecodeviewer.com/blog/html5-semantics.html" />
+  <meta name="theme-color" content="#1e88e5" />
+
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="HTML5 Semantics: Building Accessible Markup" />
+  <meta property="og:description" content="Use HTML5 semantic tags to improve accessibility and SEO of your web pages." />
+  <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/html5-semantics-og.png" />
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/blog/html5-semantics.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"HTML5 Semantics: Building Accessible Markup",
+    "author":{"@type":"Person","name":"OnlineCodeViewer Team"},
+    "datePublished":"2025-04-25",
+    "dateModified":"2025-04-25",
+    "image":"https://www.onlinecodeviewer.com/assets/images/html5-semantics-og.png",
+    "publisher":{"@type":"Organization","name":"OnlineCodeViewer","logo":{"@type":"ImageObject","url":"https://www.onlinecodeviewer.com/assets/images/logo.svg"}},
+    "mainEntityOfPage":"https://www.onlinecodeviewer.com/blog/html5-semantics.html"
+  }
+  </script>
+
+  <link rel="preload" href="../assets/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="OnlineCodeViewer Home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
+        <span>OnlineCodeViewer</span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <nav class="site-nav" role="navigation">
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Dev Docs</a></li>
+          <li><a href="blog.html" class="active">Web Dev Blog</a></li>
+          <li><a href="../shortcuts.html">Keybindings</a></li>
+          <li><a href="../about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Web Dev Blog</a></li>
+        <li aria-current="page">HTML5 Semantics</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container post-main">
+    <article>
+      <h1>HTML5 Semantics: Building Accessible Markup</h1>
+      <time datetime="2025-04-25">25 Apr 2025</time>
+
+      <p>Semantic HTML is about using tags that describe their meaning, making pages easier for browsers, search engines, and assistive technologies to understand. HTML5 introduced several new semantic elements—<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code>—which replace generic <code>&lt;div&gt;</code> blocks.</p>
+
+      <h2>Why Semantics Matter</h2>
+      <p>Screen readers use landmark roles to let users skip to a section. Search engines use headings and structure to index content. Good semantics = better accessibility + SEO.</p>
+
+      <h2>Key HTML5 Elements</h2>
+      <ul>
+        <li><strong>&lt;header&gt;</strong>: introductory content or site-wide/global navigation.</li>
+        <li><strong>&lt;nav&gt;</strong>: primary navigation links.</li>
+        <li><strong>&lt;main&gt;</strong>: main page content, unique per document.</li>
+        <li><strong>&lt;article&gt;</strong>: self-contained composition, like blog posts.</li>
+        <li><strong>&lt;section&gt;</strong>: thematic grouping within content.</li>
+        <li><strong>&lt;footer&gt;</strong>: footer for a section or document.</li>
+      </ul>
+
+      <h2>Example Structure</h2>
+      <pre><code>&lt;body&gt;
+  &lt;header&gt;…navigation…&lt;/header&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;header&gt;&lt;h1&gt;Article Title&lt;/h1&gt;&lt;/header&gt;
+      &lt;section&gt;…content…&lt;/section&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;…site info…&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+
+      <p>By adopting these tags, you ensure your markup is meaningful—and you’ll see benefits in both accessibility tests and search rankings.</p>
+
+      <p>Continue learning: <a href="accessibility-essentials.html">Accessibility Essentials: ARIA & Keyboard Navigation</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-sitemap">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Docs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="../shortcuts.html">Shortcuts</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 OnlineCodeViewer. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/OnlineCodeViewer" rel="me">Twitter</a></li>
+        <li><a href="https://github.com/OnlineCodeViewer" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
