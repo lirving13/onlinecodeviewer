@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-GB" class="light-theme">
 <head>
-  <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta -->
   <title>JavaScript Basics: Variables, Functions & DOM | Online Code Viewer Blog</title>
   <meta name="description" content="Start coding with JavaScript: understand variables, functions, and DOM manipulation in this beginner-friendly guide." />
+  <meta name="keywords" content="JavaScript basics, variables, functions, DOM, beginner JS tutorial" />
   <link rel="canonical" href="https://www.onlinecodeviewer.com/blog/js-basics.html" />
   <meta name="theme-color" content="#1e88e5" />
 
-  <!-- OpenGraph/Twitter -->
+  <!-- OpenGraph / Twitter -->
   <meta property="og:title" content="JavaScript Basics: Variables, Functions & DOM" />
   <meta property="og:description" content="Learn JavaScript fundamentals: variables, functions, and how to manipulate the DOM." />
   <meta property="og:image" content="https://www.onlinecodeviewer.com/assets/images/js-basics-og.png" />
+  <meta property="og:url" content="https://www.onlinecodeviewer.com/blog/js-basics.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- JSON-LD: Article -->
+  <!-- JSON-LD Article -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -31,29 +34,103 @@
   }
   </script>
 
-  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="preload" href="../assets/style.css" as="style">
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header class="site-header">…</header>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="OnlineCodeViewer Home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><path d="..."/></svg>
+        <span>OnlineCodeViewer</span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <nav class="site-nav" role="navigation">
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Dev Docs</a></li>
+          <li><a href="blog.html" class="active">Web Dev Blog</a></li>
+          <li><a href="../shortcuts.html">Keybindings</a></li>
+          <li><a href="../about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <nav class="breadcrumb" aria-label="Breadcrumb">
-    <ol><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Web Dev Blog</a></li><li aria-current="page">JavaScript Basics</li></ol>
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="blog.html">Web Dev Blog</a></li>
+        <li aria-current="page">JavaScript Basics</li>
+      </ol>
+    </div>
   </nav>
 
   <main class="container post-main">
     <article>
       <h1>JavaScript Basics: Variables, Functions & DOM</h1>
-      <time datetime="2025-04-28">Apr 28 2025</time>
-      <p>JavaScript brings interactivity to the web. In this guide we’ll explore:</p>
-      <h2>Variables</h2>
-      <p>Store data with <code>let</code>, <code>const</code>, and <code>var</code>…</p>
-      <h2>Functions</h2>
-      <p>Reusable blocks of code that take inputs and return outputs…</p>
-      <h2>DOM Manipulation</h2>
-      <p>Change page content, styles, and structure via the Document Object Model…</p>
-      <!-- more content -->
+      <time datetime="2025-04-28">28 Apr 2025</time>
+
+      <p>JavaScript turns static pages into interactive experiences. In this guide, we’ll cover three fundamentals: variables and data types, functions, and DOM (Document Object Model) manipulation. By the end, you’ll have working examples to test in your <a href="../index.html">Online Code Viewer</a> editor.</p>
+
+      <h2>1. Variables & Data Types</h2>
+      <p>Declare variables using <code>let</code> (mutable) and <code>const</code> (immutable):</p>
+      <pre><code>let username = "Alice";
+const maxItems = 5;
+</code></pre>
+      <p>JavaScript supports primitive types (<code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>) and objects/arrays.</p>
+
+      <h2>2. Functions</h2>
+      <p>Functions encapsulate reusable logic. Here’s a simple function:</p>
+      <pre><code>function greet(user) {
+  return `Hello, ${user}!`;
+}
+console.log(greet(username)); // "Hello, Alice!"
+</code></pre>
+      <p>Or arrow functions for brevity:</p>
+      <pre><code>const add = (a, b) => a + b;
+console.log(add(2,3)); // 5
+</code></pre>
+
+      <h2>3. DOM Manipulation</h2>
+      <p>The DOM represents your HTML as a tree. Use <code>querySelector</code> to select elements:</p>
+      <pre><code>const title = document.querySelector('h1');
+title.textContent = 'Welcome to JS Basics';
+</code></pre>
+      <p>Add interactivity with event listeners:</p>
+      <pre><code>const btn = document.querySelector('.my-btn');
+btn.addEventListener('click', () => {
+  alert('Button clicked!');
+});
+</code></pre>
+
+      <p>Play around by modifying styles or adding/removing elements dynamically. These basics set the stage for frameworks like React, Vue, and Angular.</p>
+
+      <p>Up next: <a href="html5-semantics.html">HTML5 Semantics: Building Accessible Markup</a>.</p>
     </article>
   </main>
 
-  <footer class="site-footer">…</footer>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-sitemap">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../templates.html">Templates</a></li>
+          <li><a href="../docs.html">Docs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="../shortcuts.html">Shortcuts</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 OnlineCodeViewer. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/OnlineCodeViewer" rel="me">Twitter</a></li>
+        <li><a href="https://github.com/OnlineCodeViewer" rel="me">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
